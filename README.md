@@ -38,4 +38,9 @@ python scripts/run_shadow.py evaluate --ledger /tmp/shadow_ledger.csv
 - `scripts/collect_market_data.py`: 生データの前向き収集
 - `.github/workflows/`: CIと日次データ収集
 
+## 自動化
+
+- `Frozen shadow protocol CI`: mainへの更新時にテストと基準スナップショットを検証
+- `Collect forward market data`: 平日に市場終値を前向き収集し、観測が増えた場合だけCSVへ追記
+
 研究用途であり、投資助言ではありません。
