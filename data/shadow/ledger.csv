@@ -1,0 +1,2 @@
+date,risk_percentile,drawdown_252,data_quality,state,bh_region,M,K,JH,D_EH,V_esc,recovery_margin,source,source_sha256
+2026-07-31,0.655,-0.023,HIGH,WARNING,OUTSIDE,-0.71,0.524,-0.15,2.056,0.0,-0.99,Market Black Hole Theory v1.0 Experiment Report,e6529b68e281247cb4bad8acdd318b1b5d78245df78468b62aba7e04ce774828
