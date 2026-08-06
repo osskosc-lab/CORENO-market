@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-31",
+  "risk_percentile": 0.655,
+  "drawdown_252": -0.023,
+  "data_quality": "HIGH",
+  "bh_region": "OUTSIDE",
+  "M": -0.710,
+  "K": 0.524,
+  "JH": -0.150,
+  "D_EH": 2.056,
+  "V_esc": 0.000,
+  "recovery_margin": -0.990,
+  "source": "Market Black Hole Theory v1.0 Experiment Report"
+}
