@@ -1,37 +1,86 @@
-name: Collect forward market data
+name: Collect and run MBH-X1 experiment
 
 on:
   schedule:
     - cron: "20 22 * * 1-5"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/collect-market-data.yml"
+      - "config/optimization_spec_v1.json"
+      - "src/coreno_market/optimizer.py"
+      - "scripts/run_optimization.py"
+      - "scripts/generate_pdf_report.py"
+      - "scripts/collect_market_data.py"
+      - "requirements-experiment.txt"
 
 permissions:
   contents: write
 
 concurrency:
-  group: forward-market-data
+  group: coreno-market-write
   cancel-in-progress: false
 
 jobs:
-  collect:
+  collect-experiment-report:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install collector dependency
-        run: python -m pip install --disable-pip-version-check "yfinance>=0.2.54,<1"
-      - name: Collect raw closes
-        run: python scripts/collect_market_data.py --output data/raw/market_close.csv --lookback-days 14
-      - name: Commit new observations
+          cache: pip
+          cache-dependency-path: requirements-experiment.txt
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-experiment.txt
+      - name: Backfill or append market closes
         run: |
-          if git diff --quiet -- data/raw/market_close.csv; then
-            echo "No new market observations."
-            exit 0
+          if [ -s data/raw/market_close.csv ]; then
+            python scripts/collect_market_data.py --output data/raw/market_close.csv --lookback-days 14
+          else
+            python scripts/collect_market_data.py --output data/raw/market_close.csv --start-date 1990-01-01
           fi
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run pre-registered optimization
+        run: python scripts/run_optimization.py
+      - name: Generate Japanese PDF report
+        run: python scripts/generate_pdf_report.py
+      - name: Promote report only when confirmation gates pass
+        id: promote
+        shell: bash
+        run: |
+          STATUS=$(python -c "import json; print(json.load(open('results/latest.json'))['status'])")
+          DATA_END=$(python -c "import json; print(json.load(open('results/latest.json'))['data_end'])")
+          if [ "$STATUS" = "OPTIMAL_CONFIRMED" ]; then
+            mkdir -p reports/confirmed
+            cp reports/latest/CORENO_market_experiment_report.pdf "reports/confirmed/CORENO_market_optimal_report_${DATA_END}.pdf"
+          fi
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+      - name: Upload result package
+        uses: actions/upload-artifact@v4
+        with:
+          name: coreno-market-mbh-x1-report
+          path: |
+            reports/latest/CORENO_market_experiment_report.pdf
+            results/latest.json
+            results/latest_timeseries.csv
+            results/history.csv
+          retention-days: 90
+      - name: Commit collected data and reports
+        run: |
+          mkdir -p reports/confirmed
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/market_close.csv
-          git commit -m "data: append forward market observations"
-          git push
+          git add data/raw/market_close.csv results reports/latest reports/confirmed
+          if git diff --cached --quiet; then
+            echo "No new observations or result changes."
+            exit 0
+          fi
+          git commit -m "experiment: collect data and refresh MBH-X1 report"
+          git pull --rebase origin main
+          git push origin HEAD:main

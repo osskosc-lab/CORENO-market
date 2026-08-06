@@ -1,0 +1,45 @@
+{
+  "spec_id": "coreno-market-mbh-x1-optimization-v1",
+  "frozen_at": "2026-08-06",
+  "target_market": "SP500",
+  "bootstrap_start": "1990-01-01",
+  "development_end": "2019-12-31",
+  "locked_holdout_start": "2020-01-01",
+  "forecast_window_rows": 60,
+  "event_drawdown_lte": -0.12,
+  "event_cooldown_rows": 60,
+  "alert_cooldown_rows": 20,
+  "minimum_history_rows": 504,
+  "rolling_percentile_rows": 756,
+  "vol_windows": [20, 40, 60],
+  "corr_windows": [20, 60],
+  "threshold_quantiles": [0.8, 0.85, 0.9, 0.95],
+  "persistence_days": [1, 3, 5],
+  "weight_sets": [
+    [0.35, 0.20, 0.20, 0.15, 0.10],
+    [0.25, 0.25, 0.25, 0.15, 0.10],
+    [0.30, 0.25, 0.15, 0.20, 0.10],
+    [0.25, 0.20, 0.30, 0.15, 0.10],
+    [0.20, 0.25, 0.20, 0.25, 0.10],
+    [0.30, 0.15, 0.20, 0.20, 0.15]
+  ],
+  "selection_gates": {
+    "development_event_recall_gte": 0.5,
+    "development_false_alarms_per_year_lte": 1.5
+  },
+  "confirmation_gates": {
+    "minimum_holdout_events": 2,
+    "holdout_event_recall_gte": 0.5,
+    "holdout_false_alarms_per_year_lte": 1.0,
+    "circular_shift_p_lt": 0.05,
+    "auc_advantage_over_vix_gte": 0.0
+  },
+  "circular_shift_trials": 500,
+  "random_seed": 20260806,
+  "prohibitions": [
+    "do_not_modify_frozen_shadow_spec",
+    "do_not_select_parameters_on_locked_holdout",
+    "do_not_relabel_events_after_results",
+    "do_not_connect_to_automatic_trading"
+  ]
+}
