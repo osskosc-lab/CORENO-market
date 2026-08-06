@@ -1,0 +1,35 @@
+{
+  "spec_id": "coreno-market-shadow-v1",
+  "frozen_at": "2026-07-31",
+  "state_thresholds": {
+    "stable_lt": 0.50,
+    "watch_lt": 0.65,
+    "critical_gte": 0.85,
+    "critical_days_required": 3,
+    "critical_window_days": 5,
+    "active_crisis_drawdown_lte": -0.08
+  },
+  "event_definition": {
+    "crisis_crossing_drawdown_lte": -0.12,
+    "event_cooldown_rows": 60,
+    "forecast_window_rows": 60,
+    "minimum_non_crisis_rows_before_event": 20
+  },
+  "adoption_gates": {
+    "event_recall_gte": 0.50,
+    "false_alarms_per_year_lte": 1.0,
+    "circular_shift_p_lt": 0.05,
+    "era_capture_equivalent_gte": "5/7"
+  },
+  "decision_horizon": {
+    "minimum_independent_new_crises": 2,
+    "minimum_years": 5,
+    "rule": "later_of_both"
+  },
+  "prohibitions": [
+    "no_automatic_trading",
+    "no_retrospective_retuning",
+    "no_threshold_search_on_shadow_period",
+    "no_relabeling_after_outcomes"
+  ]
+}
