@@ -99,8 +99,8 @@
   },
   "locked_holdout": {
     "start": "2020-01-02",
-    "end": "2026-08-07",
-    "observations": 1658,
+    "end": "2026-08-10",
+    "observations": 1659,
     "events": 5,
     "captured_events": 2,
     "event_recall": 0.4,
@@ -109,16 +109,16 @@
     "unresolved_alert_episodes": 0,
     "true_alert_episodes": 2,
     "false_alarms": 5,
-    "false_alarms_per_year": 0.7580790784557908,
+    "false_alarms_per_year": 0.7571361940298508,
     "event_precision": 0.2857142857142857,
     "median_lead_rows": 21.0,
-    "auc": 0.6879313940152226,
-    "objective": 0.2623768000868134
+    "auc": 0.6881104819258279,
+    "objective": 0.2626214755888287
   },
   "vix_baseline": {
-    "auc": 0.5338820248149306
+    "auc": 0.534086706015347
   },
-  "auc_advantage_over_vix": 0.154049369200292,
+  "auc_advantage_over_vix": 0.1540237759104809,
   "circular_shift_p_value": 0.07584830339321358,
   "confirmation_checks": {
     "minimum_holdout_events": true,
@@ -490,7 +490,7 @@
       "development_false_alarms_per_year": 1.0015700413356754
     }
   ],
-  "run_at_utc": "2026-08-07T22:56:42.050237+00:00",
+  "run_at_utc": "2026-08-10T22:57:51.615672+00:00",
   "data_start": "1990-01-02",
-  "data_end": "2026-08-07"
+  "data_end": "2026-08-10"
 }
