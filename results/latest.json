@@ -99,8 +99,8 @@
   },
   "locked_holdout": {
     "start": "2020-01-02",
-    "end": "2026-09-21",
-    "observations": 1688,
+    "end": "2026-09-22",
+    "observations": 1689,
     "events": 5,
     "captured_events": 2,
     "event_recall": 0.4,
@@ -109,22 +109,22 @@
     "unresolved_alert_episodes": 0,
     "true_alert_episodes": 2,
     "false_alarms": 5,
-    "false_alarms_per_year": 0.7441778728606356,
+    "false_alarms_per_year": 0.7438747454175153,
     "event_precision": 0.2857142857142857,
     "median_lead_rows": 21.0,
-    "auc": 0.6933797642736874,
-    "objective": 0.2661245199985255
+    "auc": 0.6935333377521937,
+    "objective": 0.26620798053323086
   },
   "vix_baseline": {
-    "auc": 0.5390491861829685
+    "auc": 0.5393605739079891
   },
-  "auc_advantage_over_vix": 0.15433057809071893,
-  "circular_shift_p_value": 0.05189620758483034,
+  "auc_advantage_over_vix": 0.15417276384420464,
+  "circular_shift_p_value": 0.0499001996007984,
   "confirmation_checks": {
     "minimum_holdout_events": true,
     "holdout_event_recall": false,
     "holdout_false_alarms_per_year": true,
-    "circular_shift_p": false,
+    "circular_shift_p": true,
     "auc_advantage_over_vix": true
   },
   "interpretation": "At least one pre-registered confirmation gate failed; no optimal value is claimed.",
@@ -490,7 +490,7 @@
       "development_false_alarms_per_year": 1.0015700413356754
     }
   ],
-  "run_at_utc": "2026-09-22T00:52:08.584473+00:00",
+  "run_at_utc": "2026-09-23T00:36:10.944581+00:00",
   "data_start": "1990-01-02",
-  "data_end": "2026-09-21"
+  "data_end": "2026-09-22"
 }
