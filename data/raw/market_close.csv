@@ -73178,8 +73178,12 @@ date,market,symbol,close,source
 2026-10-01,DAX,^GDAXI,24939.34961,Yahoo Finance via yfinance
 2026-10-01,DOW,^DJI,50926.55859,Yahoo Finance via yfinance
 2026-10-01,FTSE100,^FTSE,10428.2998,Yahoo Finance via yfinance
-2026-10-01,NASDAQ,^IXIC,26871.5957,Yahoo Finance via yfinance
+2026-10-01,NASDAQ,^IXIC,26871.59961,Yahoo Finance via yfinance
 2026-10-01,NIKKEI225,^N225,68956.71875,Yahoo Finance via yfinance
 2026-10-01,SP500,^GSPC,7666.450195,Yahoo Finance via yfinance
 2026-10-01,VIX,^VIX,16.38999939,Yahoo Finance via yfinance
+2026-10-02,DOW,^DJI,51176.96094,Yahoo Finance via yfinance
+2026-10-02,NASDAQ,^IXIC,27190.86328,Yahoo Finance via yfinance
 2026-10-02,NIKKEI225,^N225,68250.21094,Yahoo Finance via yfinance
+2026-10-02,SP500,^GSPC,7722.720215,Yahoo Finance via yfinance
+2026-10-02,VIX,^VIX,15.31000042,Yahoo Finance via yfinance
