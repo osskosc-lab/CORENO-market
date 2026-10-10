@@ -73222,5 +73222,11 @@ date,market,symbol,close,source
 2026-10-08,NIKKEI225,^N225,69042.10938,Yahoo Finance via yfinance
 2026-10-08,SP500,^GSPC,7765.359863,Yahoo Finance via yfinance
 2026-10-08,VIX,^VIX,15.40999985,Yahoo Finance via yfinance
-2026-10-09,HANGSENG,^HSI,24080.09961,Yahoo Finance via yfinance
-2026-10-09,NIKKEI225,^N225,68640.82812,Yahoo Finance via yfinance
+2026-10-09,DAX,^GDAXI,25087.26953,Yahoo Finance via yfinance
+2026-10-09,DOW,^DJI,51654.94922,Yahoo Finance via yfinance
+2026-10-09,FTSE100,^FTSE,10552.09961,Yahoo Finance via yfinance
+2026-10-09,HANGSENG,^HSI,24211.34961,Yahoo Finance via yfinance
+2026-10-09,NASDAQ,^IXIC,27366.16992,Yahoo Finance via yfinance
+2026-10-09,NIKKEI225,^N225,69030.92188,Yahoo Finance via yfinance
+2026-10-09,SP500,^GSPC,7811.540039,Yahoo Finance via yfinance
+2026-10-09,VIX,^VIX,14.84000015,Yahoo Finance via yfinance
