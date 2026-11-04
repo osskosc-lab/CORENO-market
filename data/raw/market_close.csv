@@ -73352,8 +73352,14 @@ date,market,symbol,close,source
 2026-11-02,DOW,^DJI,51983.98047,Yahoo Finance via yfinance
 2026-11-02,FTSE100,^FTSE,10761.2998,Yahoo Finance via yfinance
 2026-11-02,HANGSENG,^HSI,23393.32031,Yahoo Finance via yfinance
-2026-11-02,NASDAQ,^IXIC,25164.36328,Yahoo Finance via yfinance
+2026-11-02,NASDAQ,^IXIC,25164.31055,Yahoo Finance via yfinance
 2026-11-02,NIKKEI225,^N225,63081.85938,Yahoo Finance via yfinance
 2026-11-02,SP500,^GSPC,7541.399902,Yahoo Finance via yfinance
 2026-11-02,VIX,^VIX,21.14999962,Yahoo Finance via yfinance
+2026-11-03,DOW,^DJI,51786.71875,Yahoo Finance via yfinance
 2026-11-03,HANGSENG,^HSI,23503.55078,Yahoo Finance via yfinance
+2026-11-03,NASDAQ,^IXIC,25372.00977,Yahoo Finance via yfinance
+2026-11-03,SP500,^GSPC,7568.919922,Yahoo Finance via yfinance
+2026-11-03,VIX,^VIX,20.82999992,Yahoo Finance via yfinance
+2026-11-04,HANGSENG,^HSI,23419.51953,Yahoo Finance via yfinance
+2026-11-04,NIKKEI225,^N225,61290.17969,Yahoo Finance via yfinance
