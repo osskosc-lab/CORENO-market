@@ -268,8 +268,8 @@
         "sync_percentile": 0.25,
         "breadth_pressure": 0.1
       },
-      "median_objective": 0.7085168317410413,
-      "mean_objective": 0.5528869523902749,
+      "median_objective": 0.7085168961010453,
+      "mean_objective": 0.552886984570277,
       "development_event_recall": 0.7708333333333333,
       "development_false_alarms_per_year": 1.1015539774572711
     },
@@ -490,7 +490,7 @@
       "development_false_alarms_per_year": 1.0015700413356754
     }
   ],
-  "run_at_utc": "2026-11-26T04:10:11.091362+00:00",
+  "run_at_utc": "2026-11-27T04:16:51.387339+00:00",
   "data_start": "1990-01-02",
   "data_end": "2026-11-25"
 }
